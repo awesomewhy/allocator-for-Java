@@ -47,7 +47,7 @@ fn qwe(q: String) -> String {
             }
         }
     }
-    return result.trim().to_string(); // обрезаем последний пробел и преобразу
+    return result.trim().to_string();
 }
 
 
