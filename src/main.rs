@@ -24,7 +24,7 @@ fn last_char_of_first_line(text: &str) -> Option<char> {
 }
 
 fn name(arg: u32) -> i32 {
-    234
+    123
 }
 
 fn main() {
