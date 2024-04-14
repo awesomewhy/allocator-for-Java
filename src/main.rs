@@ -1,57 +1,51 @@
-mod qwe;
 mod ky;
+mod qwe;
 
 use std::collections::HashMap;
-use std::fmt;
 use std::fmt::format;
+use std::fs::File;
 use std::io;
-use std::io::Split;
-use std::mem;
-use std::process::id;
-use rand::Rng;
+use std::io::Read;
+use std::{fmt, fs};
 
 struct Lol {
     qwe: u32,
-    asd: u32
+    asd: u32,
 }
 
 impl Lol {
     fn new(qwe: u32, asd: u32) -> Lol {
-        Lol {
-            qwe,
-            asd
-        }
+        Lol { qwe, asd }
     }
+}
+
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
+}
+
+fn name(arg: u32) -> i32 {
+    234
 }
 
 fn main() {
-    let lol = String::from("hello world");
+    let greeting_file = File::open("hello.txt");
+    println!("{}", 243324)
+}
+fn read_username_from_file() -> Result<String, io::Error> {
+    let mut username_file = File::open("hello.txt")?;
+    let asd = 3234;
+    let mut username = String::new();
+    username_file.read_to_string(&mut username)?;
 
-    let res = qwe(lol);
-
-    print!("{}", res);
+    Ok(username)
 }
 
-
-fn qwe(q: String) -> String {
-    let mut temp = q.split_whitespace();
-
-    let mut result = String::new();
-
-    for idx in temp {
-        if let Some(first_char) = idx.chars().next() {
-            if is_vowel(first_char) {
-                result.push_str(&format!("{}-hay ", idx));
-            } else {
-                result.push_str(&format!("{}-{}ay ", &idx[1..], first_char));
-            }
-        }
-    }
-    return result.trim().to_string();
+fn qwe_as() -> Result<String, io::Error> {
+    let mut username = String::new();
+    let mut username_file = File::open("hello.txt")?.read_to_string(&mut username);
+    Ok(username)
 }
 
-
-fn is_vowel(letter: char) -> bool {
-    let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-    vowels.contains(&letter)
+fn qwe() -> Result<String, io::Error> {
+    fs::read_to_string("hello.txt")
 }

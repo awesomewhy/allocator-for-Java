@@ -21,8 +21,9 @@ fn main() {
         asd: 0,
         kek: "".to_string(),
         qwe: 0.0,
-    };
-    let qwe = MySt::some(qstruct);
+    };  
+
+    let qweqwe= MySt::some(qstruct);
 
     print!("{:?}" , y);
 }
